@@ -19,7 +19,7 @@ export default function Name() {
         }
     ];
 
-    var user;
+    var user = "something";
 
     // get chats from local storage
     // const chat = localStorage.getItem("chats");
@@ -43,31 +43,33 @@ export default function Name() {
     // ])
 
     const findName = () => {
+
         // get the name of the user
         const name = document.getElementById("name").value;
 
-        // find if user chats exist from chats
-        user = chat.find(user => user.name === name);
+        //find if user with the name exists in the chat array
+        const foundUser = chat.find(user => user.user === name);
+        user = foundUser.user;
 
         //get the user from local storage
         // const user = JSON.parse(localStorage.getItem(name));
-
-        console.log(user);
+        console.log(name);
+        console.log(foundUser);
 
         // find the users chat in the chats array
         // const user = chats.find(user => user.name === name);
 
-        if (user.name == name) {
-            //get users messages using the messageIds array
-            chat = user.messageIds.map(messageId => {
-                return chat.find(message => message.messageId === messageId)
-            }).filter(message => message !== undefined);
+        // if (user) {
+        //     //get users messages using the messageIds array
+        //     chat = user.messageIds.map(messageId => {
+        //         return chat.find(message => message.messageId === messageId)
+        //     }).filter(message => message !== undefined);
 
-            // chat = user.chats;
-        } else {
-            //display error message
-            alert("User chats not found");
-        }
+        //     // chat = user.chats;
+        // } else {
+        //     //display error message
+        //     alert("User chats not found");
+        // }
 
         console.log(chat);
     };
@@ -101,7 +103,7 @@ export default function Name() {
                 {chat.map(chat =>
 
                     <div key={chat.messageId}>
-                        {chat.message}
+                        {chat.user} - {chat.message}
                     </div>)} 
                     
             </div>
