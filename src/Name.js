@@ -19,22 +19,24 @@ export default function Name() {
         }
     ];
 
+    var user;
+
     // get chats from local storage
     // const chat = localStorage.getItem("chats");
     
-    const user = {
-        name: "dummy",
-        messageIds: [1, 3],
-        // chats: chat
-    }
+    // const user = {
+    //     name: "dummy",
+    //     messageIds: [1, 3],
+    //     // chats: chat
+    // }
 
-    const addDummyData = () => {
-        // store dummy data in local storage
-        localStorage.setItem("dummy", JSON.stringify(user));
+    // const addDummyData = () => {
+    //     // store dummy data in local storage
+    //     localStorage.setItem("dummy", JSON.stringify(user));
 
-        //add chat dummy data to local storage
-        localStorage.setItem("chat", JSON.stringify(chat));
-    }
+    //     //add chat dummy data to local storage
+    //     localStorage.setItem("chat", JSON.stringify(chat));
+    // }
 
     // const [chats, setChats] = useState([
     //     { name: "John", chats: chat },
@@ -44,10 +46,11 @@ export default function Name() {
         // get the name of the user
         const name = document.getElementById("name").value;
 
-        
+        // find if user chats exist from chats
+        user = chat.find(user => user.name === name);
 
         //get the user from local storage
-        const user = JSON.parse(localStorage.getItem(name));
+        // const user = JSON.parse(localStorage.getItem(name));
 
         console.log(user);
 
@@ -85,7 +88,7 @@ export default function Name() {
     return (
         <>
             <div>
-            <button onClick={addDummyData}>Add Dummy Data</button>
+            {/* <button onClick={addDummyData}>Add Dummy Data</button> */}
             </div>
 
             <div>
