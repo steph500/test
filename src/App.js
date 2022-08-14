@@ -1,7 +1,8 @@
+import Name from "./Name";
 
 function App() {
   return (
-    null
+    <Name/>
   );
 }
 
