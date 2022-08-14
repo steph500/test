@@ -4,18 +4,36 @@ export default function Name() {
     var chat = [
         {
             messageId: 1 ,
-            message: "Hello"
+            message: "Hello",
+            user: "John"
+        },
+        {
+            messageId: 2 ,
+            message: "Hello 2",
+            user: "John"
+        },
+        {
+            messageId: 3 ,
+            message: "Hello 3",
+            user: "David"
         }
     ];
+
+    // get chats from local storage
+    // const chat = localStorage.getItem("chats");
     
     const user = {
-        name: "John Doe",
-        chats: chat
+        name: "dummy",
+        messageIds: [1, 3],
+        // chats: chat
     }
 
     const addDummyData = () => {
         // store dummy data in local storage
         localStorage.setItem("dummy", JSON.stringify(user));
+
+        //add chat dummy data to local storage
+        localStorage.setItem("chat", JSON.stringify(chat));
     }
 
     // const [chats, setChats] = useState([
@@ -26,20 +44,29 @@ export default function Name() {
         // get the name of the user
         const name = document.getElementById("name").value;
 
+        
+
         //get the user from local storage
         const user = JSON.parse(localStorage.getItem(name));
+
+        console.log(user);
 
         // find the users chat in the chats array
         // const user = chats.find(user => user.name === name);
 
-        if (user) {
-            chat = user.chats;
+        if (user.name == name) {
+            //get users messages using the messageIds array
+            chat = user.messageIds.map(messageId => {
+                return chat.find(message => message.messageId === messageId)
+            }).filter(message => message !== undefined);
+
+            // chat = user.chats;
         } else {
             //display error message
-            alert("User not found");
+            alert("User chats not found");
         }
 
-        console.log(user);
+        console.log(chat);
     };
     
     //save the message to the chat array
