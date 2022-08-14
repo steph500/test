@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 export default function Name() {
     var chat = [
         {
             messageId: 1,
-            message: "Hello"
+            message: "Heefrllo"
         }
     ];
 
@@ -12,7 +12,7 @@ export default function Name() {
         { name: "John", chats: chat },
     ])
 
-    const findName = (event)=>{
+    const findName = () => {
         // get the name of the user
         const name = document.getElementById("name").value;
         console.log(name);
@@ -20,26 +20,35 @@ export default function Name() {
         // find the users chat in the chats array
         const user = chats.find(user => user.name === name);
 
-        if(user){
-            // if the user is found, set the chats to the user's chats
-            setChats(user.chats);
+        if (user) {
+            chat = user.chats;
         } else {
             //display error message
             alert("User not found");
         }
-        
+
         console.log(user);
     };
 
+    // const showChat = (chats) => {
 
-
+    // }
 
     return (
         <>
             <div>
                 <h1>Name</h1>
-                <input type="text" id="name"/>
+                <input type="text" id="name" />
                 <button onClick={findName}>Submit</button>
+            </div>
+            <div>
+                <h1>Chats</h1>
+                {chat.map(chat =>
+
+                    <div key={chat.messageId}>
+                        {chat.message}
+                    </div>)} 
+                    
             </div>
         </>
     )
