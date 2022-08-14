@@ -39,7 +39,13 @@ export default function Name() {
 
         //find if user with the name exists in the chat array
         const foundUser = chat.find(user => user.user === name);
-        user = foundUser.user;
+
+        // if user exists, set the user to the found user
+        if (foundUser) {
+            user = foundUser.user;
+        } else {
+            alert("User not found");
+        }
 
         //get the user from local storage
         // const user = JSON.parse(localStorage.getItem(name));
