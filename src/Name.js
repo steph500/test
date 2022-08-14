@@ -23,12 +23,6 @@ export default function Name() {
 
     // get chats from local storage
     // const chat = localStorage.getItem("chats");
-    
-    // const user = {
-    //     name: "dummy",
-    //     messageIds: [1, 3],
-    //     // chats: chat
-    // }
 
     // const addDummyData = () => {
     //     // store dummy data in local storage
@@ -37,10 +31,6 @@ export default function Name() {
     //     //add chat dummy data to local storage
     //     localStorage.setItem("chat", JSON.stringify(chat));
     // }
-
-    // const [chats, setChats] = useState([
-    //     { name: "John", chats: chat },
-    // ])
 
     const findName = () => {
 
@@ -55,21 +45,6 @@ export default function Name() {
         // const user = JSON.parse(localStorage.getItem(name));
         console.log(name);
         console.log(foundUser);
-
-        // find the users chat in the chats array
-        // const user = chats.find(user => user.name === name);
-
-        // if (user) {
-        //     //get users messages using the messageIds array
-        //     chat = user.messageIds.map(messageId => {
-        //         return chat.find(message => message.messageId === messageId)
-        //     }).filter(message => message !== undefined);
-
-        //     // chat = user.chats;
-        // } else {
-        //     //display error message
-        //     alert("User chats not found");
-        // }
 
         console.log(chat);
     };
