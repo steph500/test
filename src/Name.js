@@ -1,28 +1,11 @@
 import React, { useState } from 'react'
 
 export default function Name() {
-    var chat = [
-        {
-            messageId: 1 ,
-            message: "Hello",
-            user: "John"
-        },
-        {
-            messageId: 2 ,
-            message: "Hello 2",
-            user: "John"
-        },
-        {
-            messageId: 3 ,
-            message: "Hello 3",
-            user: "David"
-        }
-    ];
 
     var user = "something";
 
-    // get chats from local storage
-    // const chat = localStorage.getItem("chat");
+    // get items in local storage and store in chat array
+    var chat = JSON.parse(localStorage.getItem("chat"));
 
     // const addDummyData = () => {
     //     // store dummy data in local storage
@@ -46,13 +29,6 @@ export default function Name() {
         } else {
             alert("User not found");
         }
-
-        //get the user from local storage
-        // const user = JSON.parse(localStorage.getItem(name));
-        console.log(name);
-        console.log(foundUser);
-
-        console.log(chat);
     };
     
     //save the message to the chat array
@@ -66,6 +42,10 @@ export default function Name() {
 
         //save user to local storage
         localStorage.setItem("chat", JSON.stringify(chat));
+
+        alert("Message saved");
+
+        // var chat = JSON.parse(localStorage.getItem("chat"));
     }
 
     return (
