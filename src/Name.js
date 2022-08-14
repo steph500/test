@@ -22,7 +22,7 @@ export default function Name() {
     var user = "something";
 
     // get chats from local storage
-    // const chat = localStorage.getItem("chats");
+    // const chat = localStorage.getItem("chat");
 
     // const addDummyData = () => {
     //     // store dummy data in local storage
@@ -59,7 +59,7 @@ export default function Name() {
         chat.push({ messageId: chat.length + 1, message: message, user: user });
 
         //save user to local storage
-        localStorage.setItem("chats", JSON.stringify(chat));
+        localStorage.setItem("chat", JSON.stringify(chat));
     }
 
     return (
