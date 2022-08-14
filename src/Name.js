@@ -81,10 +81,10 @@ export default function Name() {
         const message = document.getElementById("message").value;
 
         // add the message to the chat array
-        chat.push({ messageId: chat.length + 1, message: message });
+        chat.push({ messageId: chat.length + 1, message: message, user: user });
 
         //save user to local storage
-        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("chats", JSON.stringify(chat));
     }
 
     return (
