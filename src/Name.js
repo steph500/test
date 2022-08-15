@@ -137,8 +137,7 @@ export default function Name() {
         <>
 
             <div>
-                <h3 style={headerStyle}>Name</h3>
-                <input style={inputStyle} type="text" id="name" />
+                <input style={inputStyle} type="text" id="name" placeholder="Enter your name" />
                 <button style={buttonStyle} onClick={findName}>Login</button>
             </div>
             <div style={{background: "#f1f1f1"}}>
@@ -151,7 +150,7 @@ export default function Name() {
                     
             </div>
             <div>
-                <h3 style={headerStyle}>Messages</h3>
+                <h3 style={headerStyle}>Send Message</h3>
                 <input style={inputStyle} type="text" id="message" /><br/>
                 <button style={buttonStyle} onClick={saveMessage}>Send</button>
             </div>
