@@ -32,11 +32,11 @@ export default function Name() {
     // var user = localStorage.getItem("user");
 
     // standing data for users
-    // var user = {
-    //     userId: 1,
-    //     userName: "John",
-    //     activeState: true,
-    // } 
+    var userData =[ {
+        userId: 1,
+        userName: "John",
+        activeState: false,
+    } ];
 
     localStorage.setItem("chat", JSON.stringify(chat));
 
@@ -52,6 +52,21 @@ export default function Name() {
 
         // if user exists, set the user to the found user
         if (user) {
+
+            // get the selected user data from local storage
+            userData = JSON.parse(localStorage.getItem("userData"));
+
+            //get the selected user data from the user data array
+            const selectedUser = userData.find(user => user.userName === name);
+
+            // if user is active in another browser, show error message and exit function
+            if (selectedUser.activeState) {
+                alert("User is already active in another browser");
+                return;
+            } else {
+                selectedUser.activeState = true;
+            }
+
             userName = user.user
             foundUser = true;
             alert("selected user " + userName);
