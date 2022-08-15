@@ -101,12 +101,12 @@ export default function Name() {
         <>
 
             <div>
-                <h1>Name</h1>
-                <input type="text" id="name" />
+                <h3>Name</h3>
+                <input type="text" id="name" /><br/><br/>
                 <button onClick={findName}>Submit</button>
             </div>
             <div>
-                <h1>Chats</h1>
+                <h3>Chats</h3>
                 {chat.map(chat =>
 
                     <div key={chat.messageId}>
@@ -115,8 +115,8 @@ export default function Name() {
                     
             </div>
             <div>
-                <h1>Messages</h1>
-                <input type="text" id="message" />
+                <h3>Messages</h3>
+                <input type="text" id="message" /><br/><br/>
                 <button onClick={saveMessage}>Save Message</button>
             </div>
         </>
