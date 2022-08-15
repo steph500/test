@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button';
 
 export default function Name() {
 
@@ -12,17 +13,17 @@ export default function Name() {
     // standing data for testing
     var chat = [
         {
-            messageId: 1 ,
+            messageId: 1,
             message: "Hello",
             user: "John"
         },
         {
-            messageId: 2 ,
+            messageId: 2,
             message: "Hello 2",
             user: "John"
         },
         {
-            messageId: 3 ,
+            messageId: 3,
             message: "Hello 3",
             user: "David"
         }
@@ -32,11 +33,11 @@ export default function Name() {
     // var user = localStorage.getItem("user");
 
     // standing data for users
-    var userData =[ {
+    var userData = [{
         userId: 1,
         userName: "John",
         activeState: false,
-    } ];
+    }];
 
     localStorage.setItem("chat", JSON.stringify(chat));
 
@@ -74,23 +75,23 @@ export default function Name() {
             return;
         }
     };
-    
+
     //save the message to the chat array
     const saveMessage = () => {
 
         if (foundUser) {
-        // get the message from the input field
-        const message = document.getElementById("message").value;
+            // get the message from the input field
+            const message = document.getElementById("message").value;
 
-        // add the message to the chat array
-        chat.push({ messageId: chat.length + 1, message: message, user: user });
+            // add the message to the chat array
+            chat.push({ messageId: chat.length + 1, message: message, user: user });
 
-        //save user to local storage
-        localStorage.setItem("chat", JSON.stringify(chat));
+            //save user to local storage
+            localStorage.setItem("chat", JSON.stringify(chat));
 
-        alert("Message saved");
+            alert("Message saved");
         } else {
-            alert ("The user you entered does not exist, please select an existing user");
+            alert("The user you entered does not exist, please select an existing user");
         }
 
 
@@ -99,26 +100,18 @@ export default function Name() {
 
     return (
         <>
+            <h1>Name</h1>
+            <input type="text" id="name" />
+            <Button variant="outline-primary" onClick={findName}>Submit</Button>{' '}
+            <h1>Chats</h1>
+            {chat.map(chat =>
 
-            <div>
-                <h1>Name</h1>
-                <input type="text" id="name" />
-                <button onClick={findName}>Submit</button>
-            </div>
-            <div>
-                <h1>Chats</h1>
-                {chat.map(chat =>
-
-                    <div key={chat.messageId}>
-                        {chat.user} - {chat.message}
-                    </div>)} 
-                    
-            </div>
-            <div>
-                <h1>Messages</h1>
-                <input type="text" id="message" />
-                <button onClick={saveMessage}>Save Message</button>
-            </div>
+                <div key={chat.messageId}>
+                    {chat.user} - {chat.message}
+                </div>)}
+            <h1>Messages</h1>
+            <input type="text" id="message" />
+            <Button variant="outline-primary" onClick={saveMessage}>Save Message</Button>{' '}
         </>
     )
 }
