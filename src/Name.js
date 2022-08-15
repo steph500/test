@@ -120,25 +120,37 @@ export default function Name() {
         hover: "color: #ccc;",
     }
 
+    const headerStyle = {
+        fontSize: "25px",
+        fontWeight: "bold",
+        margin: "10px",
+    }
+
+    const messageStyle = {
+        fontSize: "25px",
+        fontWeight: "bold",
+        margin: "10px",
+    }
+
     return (
         <>
 
             <div>
-                <h3>Name</h3>
+                <h3 style={headerStyle}>Name</h3>
                 <input style={inputStyle} type="text" id="name" />
                 <button style={buttonStyle} onClick={findName}>Login</button>
             </div>
             <div>
-                <h3>Chats</h3>
+                <h3 style={headerStyle}>Chats</h3>
                 {chat.map(chat =>
 
-                    <div key={chat.messageId}>
+                    <div style={messageStyle} key={chat.messageId}>
                         {chat.user} - {chat.message}
                     </div>)} 
                     
             </div>
             <div>
-                <h3>Messages</h3>
+                <h3 style={headerStyle}>Messages</h3>
                 <input style={inputStyle} type="text" id="message" /><br/>
                 <button style={buttonStyle} onClick={saveMessage}>Send</button>
             </div>
