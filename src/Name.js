@@ -54,7 +54,7 @@ export default function Name() {
         if (user) {
 
             // get the selected user data from local storage
-            userData = JSON.parse(localStorage.getItem("userData"));
+            // userData = JSON.parse(localStorage.getItem("userData"));
 
             //get the selected user data from the user data array
             const selectedUser = userData.find(user => user.userName === name);
@@ -65,13 +65,13 @@ export default function Name() {
                 return;
             } else {
                 selectedUser.activeState = true;
+                userName = user.user
+                foundUser = true;
+                alert("selected user " + userName);
             }
-
-            userName = user.user
-            foundUser = true;
-            alert("selected user " + userName);
         } else {
             alert("User not found");
+            return;
         }
     };
     
