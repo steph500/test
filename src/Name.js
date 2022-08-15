@@ -100,23 +100,24 @@ export default function Name() {
     // styles got the appended to the html file
 
     const inputStyle = {
-        width: "100%",
-        height: "50px",
-        border: "1px solid black",
-        borderRadius: "5px",
-        margin: "10px",
-        padding: "10px",
-        fontSize: "20px",
+        width: "60%",
+        padding: "12px 20px",
+        margin: "8px 0",
+        display: "inline-block",
+        border: "1px solid #ccc",
+        borderRadius: "4px",
+        boxSizing: "border-box"
     }
 
     const buttonStyle = {
-        width: "100%",
+        width: "20%",
         height: "50px",
         border: "1px solid black",
-        borderRadius: "5px",
+        borderRadius: "15px",
         margin: "10px",
         padding: "10px",
-        fontSize: "20px",
+        fontSize: "15px",
+        hover: "color: #ccc;",
     }
 
     return (
@@ -124,8 +125,8 @@ export default function Name() {
 
             <div>
                 <h3>Name</h3>
-                <input style={inputStyle} type="text" id="name" /><br/><br/>
-                <button style={buttonStyle} onClick={findName}>Submit</button>
+                <input style={inputStyle} type="text" id="name" />
+                <button style={buttonStyle} onClick={findName}>Login</button>
             </div>
             <div>
                 <h3>Chats</h3>
@@ -138,8 +139,8 @@ export default function Name() {
             </div>
             <div>
                 <h3>Messages</h3>
-                <input style={inputStyle} type="text" id="message" /><br/><br/>
-                <button style={buttonStyle} onClick={saveMessage}>Save Message</button>
+                <input style={inputStyle} type="text" id="message" /><br/>
+                <button style={buttonStyle} onClick={saveMessage}>Send</button>
             </div>
         </>
     )
