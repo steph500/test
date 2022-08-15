@@ -7,15 +7,29 @@ export default function Name() {
     var foundUser = false;
 
     // get items in local storage and store in chat array
-    var chat = JSON.parse(localStorage.getItem("chat"));
+    // var chat = JSON.parse(localStorage.getItem("chat"));
 
-    // const addDummyData = () => {
-    //     // store dummy data in local storage
-    //     localStorage.setItem("dummy", JSON.stringify(user));
+    // standing data for testing
+    var chat = [
+        {
+            messageId: 1 ,
+            message: "Hello",
+            user: "John"
+        },
+        {
+            messageId: 2 ,
+            message: "Hello 2",
+            user: "John"
+        },
+        {
+            messageId: 3 ,
+            message: "Hello 3",
+            user: "David"
+        }
+    ];
 
-    //     //add chat dummy data to local storage
-    //     localStorage.setItem("chat", JSON.stringify(chat));
-    // }
+    localStorage.setItem("chat", JSON.stringify(chat));
+
 
     const findName = () => {
 
@@ -59,9 +73,6 @@ export default function Name() {
 
     return (
         <>
-            <div>
-            {/* <button onClick={addDummyData}>Add Dummy Data</button> */}
-            </div>
 
             <div>
                 <h1>Name</h1>
