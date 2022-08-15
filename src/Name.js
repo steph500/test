@@ -44,6 +44,7 @@ export default function Name() {
         if (user) {
             userName = user.user
             foundUser = true;
+            alert("selected user " + userName);
         } else {
             alert("User not found");
         }
