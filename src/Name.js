@@ -121,15 +121,16 @@ export default function Name() {
     }
 
     const headerStyle = {
-        fontSize: "25px",
+        fontSize: "20px",
         fontWeight: "bold",
         margin: "10px",
     }
 
     const messageStyle = {
-        fontSize: "25px",
-        fontWeight: "bold",
-        margin: "10px",
+        marginLeft: "50px",
+        marginBottom: "5px",
+        maxHeight: "100px",
+        minHeight: "50px",
     }
 
     return (
@@ -140,7 +141,7 @@ export default function Name() {
                 <input style={inputStyle} type="text" id="name" />
                 <button style={buttonStyle} onClick={findName}>Login</button>
             </div>
-            <div>
+            <div style={{background: "#f1f1f1"}}>
                 <h3 style={headerStyle}>Chats</h3>
                 {chat.map(chat =>
 
