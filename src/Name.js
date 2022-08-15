@@ -97,6 +97,8 @@ export default function Name() {
         // var chat = JSON.parse(localStorage.getItem("chat"));
     }
 
+    // styles got the appended to the html file
+
     return (
         <>
 
