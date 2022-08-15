@@ -28,6 +28,16 @@ export default function Name() {
         }
     ];
 
+    // get user from local storage
+    // var user = localStorage.getItem("user");
+
+    // standing data for users
+    // var user = {
+    //     userId: 1,
+    //     userName: "John",
+    //     activeState: true,
+    // } 
+
     localStorage.setItem("chat", JSON.stringify(chat));
 
 
