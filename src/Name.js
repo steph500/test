@@ -5,6 +5,7 @@ export default function Name() {
     var user = "something";
     var userName = "something";
     var foundUser = false;
+    var canSendMessage = false;
 
     // get items in local storage and store in chat array
     // var chat = JSON.parse(localStorage.getItem("chat"));
@@ -68,6 +69,7 @@ export default function Name() {
                 userName = user.user
                 foundUser = true;
                 alert("selected user " + userName);
+                canSendMessage = true;
             }
         } else {
             alert("User not found");
@@ -78,7 +80,7 @@ export default function Name() {
     //save the message to the chat array
     const saveMessage = () => {
 
-        if (foundUser) {
+        if (canSendMessage) {
         // get the message from the input field
         const message = document.getElementById("message").value;
 
